@@ -10,6 +10,8 @@ import UIKit
 
 
 class BaseViewController: UIViewController {
+    
+    
 
     var alert = SweetAlert()
     override func viewDidLoad() {
@@ -28,45 +30,49 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+     navBar
+     */
     
-    
-    func showMessage(mes:String) {
-       _ = SweetAlert().showAlert(mes)
-    }
-    
-    func subtitleAlert(mes:String , subtitle:String,style: AlertStyle )  {
-        _ = SweetAlert().showAlert(mes, subTitle: subtitle, style: AlertStyle.success)
-    }
-    
-    
-    
-     func warningAlert(_ sender: AnyObject) {
-        _ = SweetAlert().showAlert("Are you sure?", subTitle: "You file will permanently delete!", style: AlertStyle.warning, buttonTitle:"Cancel", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "Yes, delete it!", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                
-                print("Cancel Button  Pressed", terminator: "")
-            }
-            else {
-                _ = SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.success)
-            }
+    func createNavLeftMenu(left:AnyObject, withTarget: ( @escaping () ->())){
+
+        
+        if (left.isKind(of: NSString.self)) {
+            let btn = UIButton()
+            btn.frame = CGRect.init(x: 0, y: 0, width: 40, height: 30)
+            btn.setTitle(left as? String, for: .normal)
+            btn.backgroundColor = UIColor.red
+            let item = UIBarButtonItem.init(customView: btn)
+            self.navigationItem.leftBarButtonItem = item
+            
         }
-    }
-    
-     func cancelAndConfirm(_ sender: AnyObject) {
-        _ = SweetAlert().showAlert("Are you sure?", subTitle: "You file will permanently delete!", style: AlertStyle.warning, buttonTitle:"No, cancel plx!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "Yes, delete it!", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                
-                _ = SweetAlert().showAlert("Cancelled!", subTitle: "Your imaginary file is safe", style: AlertStyle.error)
-            }
-            else {
-                _ = SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.success)
-            }
+        
+       else if (left.isKind(of: UIImage.self)) {
+            let btn = UIButton()
+            btn.frame = CGRect.init(x: 0, y: 0, width: 24 , height: 24)
+            btn.setImage(left as? UIImage, for: .normal)
+            btn.imageView?.contentMode = .scaleAspectFit
+            let item = UIBarButtonItem.init(customView: btn)
+            self.navigationItem.leftBarButtonItem = item
         }
+        else if(left.isKind(of: UIView.self)){
+        
+            let item = UIBarButtonItem.init(customView: left as! UIView)
+            self.navigationItem.leftBarButtonItem = item
+        
+        }
+        
         
     }
     
-     func customIconAlert(_ sender: AnyObject) {
-        _ = SweetAlert().showAlert("Sweet!", subTitle: "Here's a custom image.", style: AlertStyle.customImag(imageFile: "thumb.jpg"))
+    func tapLeft(){
+        
     }
+    
+    
+    /*
+     消息提示
+     */
+    
 
 }
