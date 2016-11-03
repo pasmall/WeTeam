@@ -47,6 +47,9 @@
 		271DC63F1DC9CACC00D75F6B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC63E1DC9CACC00D75F6B /* Extensions.swift */; };
 		271DC6411DC9CD0600D75F6B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC6401DC9CD0600D75F6B /* Common.swift */; };
 		271DC6431DC9E34D00D75F6B /* MyUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC6421DC9E34D00D75F6B /* MyUI.swift */; };
+		273BF5811DCB1B840070B3E5 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273BF5801DCB1B840070B3E5 /* WorkViewController.swift */; };
+		273BF5871DCB310D0070B3E5 /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273BF5851DCB310D0070B3E5 /* WorkCell.swift */; };
+		273BF5881DCB310D0070B3E5 /* WorkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273BF5861DCB310D0070B3E5 /* WorkCell.xib */; };
 		274FDB7D1DC8960800FAE758 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FDB7C1DC8960800FAE758 /* AppDelegate.swift */; };
 		274FDB841DC8960800FAE758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274FDB831DC8960800FAE758 /* Assets.xcassets */; };
 		274FDB871DC8960800FAE758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274FDB851DC8960800FAE758 /* LaunchScreen.storyboard */; };
@@ -114,6 +117,9 @@
 		271DC63E1DC9CACC00D75F6B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		271DC6401DC9CD0600D75F6B /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		271DC6421DC9E34D00D75F6B /* MyUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUI.swift; sourceTree = "<group>"; };
+		273BF5801DCB1B840070B3E5 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
+		273BF5851DCB310D0070B3E5 /* WorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
+		273BF5861DCB310D0070B3E5 /* WorkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkCell.xib; sourceTree = "<group>"; };
 		274FDB791DC8960800FAE758 /* WeTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274FDB7C1DC8960800FAE758 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274FDB831DC8960800FAE758 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 				271DC5DF1DC9938500D75F6B /* BaseViewController */,
 				271DC6371DC9C2DF00D75F6B /* Login */,
 				271DC5E31DC9938500D75F6B /* Home */,
+				273BF57F1DCB1A750070B3E5 /* Work */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 		271DC5E61DC9938500D75F6B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				273BF5841DCB30F90070B3E5 /* Cell */,
 				271DC5E71DC9938500D75F6B /* SweetAlert.swift */,
 			);
 			path = View;
@@ -299,6 +307,23 @@
 				271DC6381DC9C2FD00D75F6B /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		273BF57F1DCB1A750070B3E5 /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				273BF5801DCB1B840070B3E5 /* WorkViewController.swift */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
+		273BF5841DCB30F90070B3E5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				273BF5851DCB310D0070B3E5 /* WorkCell.swift */,
+				273BF5861DCB310D0070B3E5 /* WorkCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		274FDB701DC8960800FAE758 = {
@@ -471,6 +496,7 @@
 				271DC5FC1DC9B53500D75F6B /* Emoji.plist in Resources */,
 				271DC5FD1DC9B53500D75F6B /* RongCloudKit.strings in Resources */,
 				274FDB871DC8960800FAE758 /* LaunchScreen.storyboard in Resources */,
+				273BF5881DCB310D0070B3E5 /* WorkCell.xib in Resources */,
 				271DC5FF1DC9B53500D75F6B /* release_notes_ios.txt in Resources */,
 				274FDB841DC8960800FAE758 /* Assets.xcassets in Resources */,
 				271DC6001DC9B53500D75F6B /* RongCloud.bundle in Resources */,
@@ -506,7 +532,9 @@
 				274FDB7D1DC8960800FAE758 /* AppDelegate.swift in Sources */,
 				271DC6411DC9CD0600D75F6B /* Common.swift in Sources */,
 				271DC63A1DC9C2FD00D75F6B /* LoginViewController.swift in Sources */,
+				273BF5871DCB310D0070B3E5 /* WorkCell.swift in Sources */,
 				271DC63D1DC9C5BB00D75F6B /* BaseViewController.swift in Sources */,
+				273BF5811DCB1B840070B3E5 /* WorkViewController.swift in Sources */,
 				271DC5EA1DC9938500D75F6B /* BaseTabBarViewController.swift in Sources */,
 				271DC5EF1DC9941E00D75F6B /* NetWork.swift in Sources */,
 			);

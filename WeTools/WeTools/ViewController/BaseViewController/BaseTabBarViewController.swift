@@ -34,22 +34,22 @@ class BaseTabBarViewController: UITabBarController {
     
     private func setUI() {
         addChildVC(childController: TaskViewController(), title: "消息", imageName: "chat_tab")
-        addChildVC(childController: BaseViewController(), title: "事务", imageName: "discovery_tab")
+        addChildVC(childController: WorkViewController(), title: "事务", imageName: "discovery_tab")
         addChildVC(childController: BaseViewController(), title: "我的", imageName: "account_tab")
         
     }
     
     
-    func addChildVC(childController: BaseViewController , title: String! ,imageName : String!) {
+    func addChildVC(childController: UIViewController? , title: String! ,imageName : String!) {
         
-        childController.tabBarItem.image = UIImage(named: imageName)
-        childController.tabBarItem.selectedImage = UIImage(named: imageName + "2")
-        childController.tabBarItem.title = title
+        childController?.tabBarItem.image = UIImage(named: imageName)
+        childController?.tabBarItem.selectedImage = UIImage(named: imageName + "2")
+        childController?.tabBarItem.title = title
         
-        childController.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        childController?.tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0)
         
         
-        let nav = BaseNavigationController(rootViewController: childController)
+        let nav = BaseNavigationController(rootViewController: childController!)
         addChildViewController(nav)
     }
     

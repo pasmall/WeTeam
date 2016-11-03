@@ -14,16 +14,17 @@ class BaseViewController: UIViewController {
     
 
     var alert = SweetAlert()
+    var leftBtn :UIButton! = nil
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor(red: 242.0/255.0, green: 244.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+        self.view.backgroundColor = UIColor.white
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,14 +35,16 @@ class BaseViewController: UIViewController {
      navBar
      */
     
-    func createNavLeftMenu(left:AnyObject, withTarget: ( @escaping () ->())){
+    func createNavLeftMenu(left:AnyObject){
 
         
         if (left.isKind(of: NSString.self)) {
             let btn = UIButton()
             btn.frame = CGRect.init(x: 0, y: 0, width: 40, height: 30)
             btn.setTitle(left as? String, for: .normal)
-            btn.backgroundColor = UIColor.red
+            btn.setTitleColor(blueColor, for: .normal)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            leftBtn = btn
             let item = UIBarButtonItem.init(customView: btn)
             self.navigationItem.leftBarButtonItem = item
             
@@ -52,6 +55,7 @@ class BaseViewController: UIViewController {
             btn.frame = CGRect.init(x: 0, y: 0, width: 24 , height: 24)
             btn.setImage(left as? UIImage, for: .normal)
             btn.imageView?.contentMode = .scaleAspectFit
+            leftBtn = btn
             let item = UIBarButtonItem.init(customView: btn)
             self.navigationItem.leftBarButtonItem = item
         }
@@ -62,10 +66,6 @@ class BaseViewController: UIViewController {
         
         }
         
-        
-    }
-    
-    func tapLeft(){
         
     }
     

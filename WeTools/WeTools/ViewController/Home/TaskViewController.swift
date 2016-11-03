@@ -8,17 +8,28 @@
 
 import UIKit
 
-class TaskViewController: BaseViewController {
+class TaskViewController: RCConversationListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        //设置需要显示哪些类型的会话
+        self.setDisplayConversationTypes([RCConversationType.ConversationType_PRIVATE.rawValue,
+                                          RCConversationType.ConversationType_DISCUSSION.rawValue,
+                                          RCConversationType.ConversationType_CHATROOM.rawValue,
+                                          RCConversationType.ConversationType_GROUP.rawValue,
+                                          RCConversationType.ConversationType_APPSERVICE.rawValue,
+                                          RCConversationType.ConversationType_SYSTEM.rawValue])
+        //设置需要将哪些类型的会话在会话列表中聚合显示
+        self.setCollectionConversationType([RCConversationType.ConversationType_DISCUSSION.rawValue,
+                                            RCConversationType.ConversationType_GROUP.rawValue])
         
+        self.navigationItem.title = "会话列表"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "单聊", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TaskViewController.privateChat))
         
-        
-        
+        conversationListTableView.separatorStyle = .none
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,34 +38,22 @@ class TaskViewController: BaseViewController {
     }
     
     
-    
-    func loginRongCloud() {
-        //登录融云服务器的token。需要您向您的服务器请求，您的服务器调用server api获取token
-        //开发初始阶段，您可以先在融云后台API调试中获取
-        let token = "OHvNZQPCl8d9xFBV6hYuyn3KWcePBCPg0uDKhMccdAOuTDtWZugh9AtgyVimggIZaZtCVyTc8sWNAeH0EzC2oA=="
-        
-        //连接融云服务器
-        RCIM.shared().connect(withToken: token,
-                              success: { (userId) -> Void in
-                                print("登陆成功。当前登录的用户ID：\(userId)")
-                                
-                                //设置当前登陆用户的信息
-                                RCIM.shared().currentUserInfo = RCUserInfo.init(userId: userId, name: "我的名字", portrait: "http://www.rongcloud.cn/images/newVersion/logo/baixing.png")
-                                
-                                DispatchQueue.main.sync(execute: { () -> Void in
-                                    //打开会话列表
-//                                    let chatListView = DemoChatListViewController()
-//                                    self.navigationController?.pushViewController(chatListView, animated: true)
-                                })
-            }, error: { (status) -> Void in
-                print("登陆的错误码为:\(status.rawValue)")
-            }, tokenIncorrect: {
-                //token过期或者不正确。
-                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
-                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
-                print("token错误")
-        })
+    func privateChat() {
+        //打开会话界面
+        let chatWithSelf = RCConversationViewController(conversationType: RCConversationType.ConversationType_PRIVATE, targetId: "me")
+        chatWithSelf?.title = "想显示的会话标题"
+        self.navigationController?.pushViewController(chatWithSelf!, animated: true)
     }
+    
+    
+    //重写RCConversationListViewController的onSelectedTableRow事件
+    override func onSelectedTableRow(_ conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, at indexPath: IndexPath!) {
+        //打开会话界面
+        let chat = RCConversationViewController(conversationType: model.conversationType, targetId: model.targetId)
+        chat?.title = "想显示的会话标题"
+        self.navigationController?.pushViewController(chat!, animated: true)
+    }
+    
 
     /*
     // MARK: - Navigation
