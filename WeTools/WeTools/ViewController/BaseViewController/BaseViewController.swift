@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
 
     var alert = SweetAlert()
     var leftBtn :UIButton! = nil
-    
+    var rightBtn :UIButton! = nil
     
     
     
@@ -68,6 +68,42 @@ class BaseViewController: UIViewController {
         
         
     }
+    
+    
+    func createNavRightMenu(right:AnyObject){
+        
+        
+        if (right.isKind(of: NSString.self)) {
+            let btn = UIButton()
+            btn.frame = CGRect.init(x: 0, y: 0, width: 40, height: 30)
+            btn.setTitle(right as? String, for: .normal)
+            btn.setTitleColor(blueColor, for: .normal)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            rightBtn = btn
+            let item = UIBarButtonItem.init(customView: btn)
+            self.navigationItem.rightBarButtonItem = item
+            
+        }
+            
+        else if (right.isKind(of: UIImage.self)) {
+            let btn = UIButton()
+            btn.frame = CGRect.init(x: 0, y: 0, width: 24 , height: 24)
+            btn.setImage(right as? UIImage, for: .normal)
+            btn.imageView?.contentMode = .scaleAspectFit
+            rightBtn = btn
+            let item = UIBarButtonItem.init(customView: btn)
+            self.navigationItem.rightBarButtonItem = item
+        }
+        else if(right.isKind(of: UIView.self)){
+            
+            let item = UIBarButtonItem.init(customView: right as! UIView)
+            self.navigationItem.rightBarButtonItem = item
+            
+        }
+        
+        
+    }
+    
     
     
     /*

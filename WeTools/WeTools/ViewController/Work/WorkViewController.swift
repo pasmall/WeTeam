@@ -11,6 +11,10 @@ import UIKit
 class WorkViewController: BaseViewController , UITableViewDelegate , UITableViewDataSource{
 
     var tableView:UITableView! = nil
+    var refreshControl: UIRefreshControl!
+    var timer : Timer!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,10 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
         
         self.navigationItem.title = "事务"
         
+
+        createNavRightMenu(right: UIImage.init(named: "work_add")!)
+        
+        
         tableView = UITableView.init(frame: view.bounds)
         view.addSubview(tableView)
         tableView.delegate = self
@@ -37,7 +45,19 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
         tableView.separatorStyle = .none
         
         
+//        let header  = UIView(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 44))
+//        tableView.tableHeaderView = header
         
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = blueColor
+        tableView.addSubview(refreshControl)
+        
+        
+        rightBtn.addTarget(self, action: #selector(WorkViewController.tapRightBtn), for: .touchUpInside)
+        
+    }
+    
+    func tapRightBtn()  {
         
     }
     
@@ -76,6 +96,22 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
     
         return 84
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if refreshControl.isRefreshing {
+            doSomething()
+        }
+    }
+    
+    func doSomething() {
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(WorkViewController.endOfWork), userInfo: nil, repeats: false)
+    }
+    
+    func endOfWork() {
+        refreshControl.endRefreshing()
+        timer.invalidate()
+        timer = nil
     }
     
 }

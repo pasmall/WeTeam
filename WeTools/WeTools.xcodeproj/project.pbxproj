@@ -55,6 +55,7 @@
 		274FDB871DC8960800FAE758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274FDB851DC8960800FAE758 /* LaunchScreen.storyboard */; };
 		274FDB921DC8960800FAE758 /* WeToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FDB911DC8960800FAE758 /* WeToolsTests.swift */; };
 		274FDB9D1DC8960800FAE758 /* WeToolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FDB9C1DC8960800FAE758 /* WeToolsUITests.swift */; };
+		27989BF31DCC30CB00F36262 /* AddWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		274FDB981DC8960800FAE758 /* WeToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		274FDB9C1DC8960800FAE758 /* WeToolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeToolsUITests.swift; sourceTree = "<group>"; };
 		274FDB9E1DC8960800FAE758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				273BF5801DCB1B840070B3E5 /* WorkViewController.swift */,
+				27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */,
 			);
 			path = Work;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				271DC5ED1DC9938500D75F6B /* SweetAlert.swift in Sources */,
 				274FDB7D1DC8960800FAE758 /* AppDelegate.swift in Sources */,
 				271DC6411DC9CD0600D75F6B /* Common.swift in Sources */,
+				27989BF31DCC30CB00F36262 /* AddWorkViewController.swift in Sources */,
 				271DC63A1DC9C2FD00D75F6B /* LoginViewController.swift in Sources */,
 				273BF5871DCB310D0070B3E5 /* WorkCell.swift in Sources */,
 				271DC63D1DC9C5BB00D75F6B /* BaseViewController.swift in Sources */,
