@@ -13,7 +13,10 @@ class AddWorkViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "创建项目"
+       
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "下一步", style: .done, target: self, action: #selector(AddWorkViewController.tapNext))
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +24,11 @@ class AddWorkViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    func tapNext()  {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

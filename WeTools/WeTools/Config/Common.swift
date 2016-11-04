@@ -25,3 +25,4 @@ let H_FIT = SCREEN_HEIGHT/568
 
 let blueColor = UIColor.getColor(r: 42, g: 155, b: 232, l: 1)
 let backColor = UIColor.getColor(r: 234, g: 234, b: 234, l: 1)
+let fontColor = UIColor.getColor(r: 32, g: 95, b: 254, l: 1)

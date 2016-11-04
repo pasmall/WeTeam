@@ -75,9 +75,9 @@ class BaseViewController: UIViewController {
         
         if (right.isKind(of: NSString.self)) {
             let btn = UIButton()
-            btn.frame = CGRect.init(x: 0, y: 0, width: 40, height: 30)
+            btn.frame = CGRect.init(x: 0, y: 0, width: 80, height: 30)
             btn.setTitle(right as? String, for: .normal)
-            btn.setTitleColor(blueColor, for: .normal)
+            btn.setTitleColor(fontColor, for: .normal)
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             rightBtn = btn
             let item = UIBarButtonItem.init(customView: btn)
@@ -87,7 +87,7 @@ class BaseViewController: UIViewController {
             
         else if (right.isKind(of: UIImage.self)) {
             let btn = UIButton()
-            btn.frame = CGRect.init(x: 0, y: 0, width: 24 , height: 24)
+            btn.frame = CGRect.init(x: 0, y: 0, width: 44 , height: 44)
             btn.setImage(right as? UIImage, for: .normal)
             btn.imageView?.contentMode = .scaleAspectFit
             rightBtn = btn

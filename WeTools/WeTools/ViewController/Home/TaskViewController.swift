@@ -27,7 +27,14 @@ class TaskViewController: RCConversationListViewController {
                                             RCConversationType.ConversationType_GROUP.rawValue])
         
         self.navigationItem.title = "会话列表"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "单聊", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TaskViewController.privateChat))
+        
+        let btn = UIButton()
+        btn.frame = CGRect.init(x: 0, y: 0, width: 44 , height: 44)
+        btn.setImage(UIImage.init(named: "ms_add"), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFit
+        self.navigationItem.rightBarButtonItem =  UIBarButtonItem.init(customView: btn)
+        btn.addTarget(self, action: #selector(TaskViewController.privateChat), for: .touchUpInside)
+        
         
         conversationListTableView.separatorStyle = .none
     }

@@ -59,6 +59,7 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
     
     func tapRightBtn()  {
         
+        self.navigationController?.pushViewController(AddWorkViewController(), animated: true)
     }
     
     
