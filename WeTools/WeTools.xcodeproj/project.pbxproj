@@ -55,6 +55,9 @@
 		274FDB871DC8960800FAE758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274FDB851DC8960800FAE758 /* LaunchScreen.storyboard */; };
 		274FDB921DC8960800FAE758 /* WeToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FDB911DC8960800FAE758 /* WeToolsTests.swift */; };
 		274FDB9D1DC8960800FAE758 /* WeToolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FDB9C1DC8960800FAE758 /* WeToolsUITests.swift */; };
+		2776EB241DD1CCDC0065A85C /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776EB231DD1CCDC0065A85C /* MineViewController.swift */; };
+		2776EB271DD1CDF00065A85C /* MineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776EB251DD1CDF00065A85C /* MineCollectionViewCell.swift */; };
+		2776EB281DD1CDF00065A85C /* MineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2776EB261DD1CDF00065A85C /* MineCollectionViewCell.xib */; };
 		27989BF31DCC30CB00F36262 /* AddWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +135,9 @@
 		274FDB981DC8960800FAE758 /* WeToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		274FDB9C1DC8960800FAE758 /* WeToolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeToolsUITests.swift; sourceTree = "<group>"; };
 		274FDB9E1DC8960800FAE758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2776EB231DD1CCDC0065A85C /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		2776EB251DD1CDF00065A85C /* MineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCollectionViewCell.swift; sourceTree = "<group>"; };
+		2776EB261DD1CDF00065A85C /* MineCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCollectionViewCell.xib; sourceTree = "<group>"; };
 		27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +218,7 @@
 				271DC6371DC9C2DF00D75F6B /* Login */,
 				271DC5E31DC9938500D75F6B /* Home */,
 				273BF57F1DCB1A750070B3E5 /* Work */,
+				2776EB221DD1CCBD0065A85C /* Mine */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -325,6 +332,8 @@
 			children = (
 				273BF5851DCB310D0070B3E5 /* WorkCell.swift */,
 				273BF5861DCB310D0070B3E5 /* WorkCell.xib */,
+				2776EB251DD1CDF00065A85C /* MineCollectionViewCell.swift */,
+				2776EB261DD1CDF00065A85C /* MineCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -382,6 +391,14 @@
 				274FDB9E1DC8960800FAE758 /* Info.plist */,
 			);
 			path = WeToolsUITests;
+			sourceTree = "<group>";
+		};
+		2776EB221DD1CCBD0065A85C /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				2776EB231DD1CCDC0065A85C /* MineViewController.swift */,
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,7 +464,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = lhtb;
 				TargetAttributes = {
 					274FDB781DC8960800FAE758 = {
@@ -499,6 +516,7 @@
 				271DC5FC1DC9B53500D75F6B /* Emoji.plist in Resources */,
 				271DC5FD1DC9B53500D75F6B /* RongCloudKit.strings in Resources */,
 				274FDB871DC8960800FAE758 /* LaunchScreen.storyboard in Resources */,
+				2776EB281DD1CDF00065A85C /* MineCollectionViewCell.xib in Resources */,
 				273BF5881DCB310D0070B3E5 /* WorkCell.xib in Resources */,
 				271DC5FF1DC9B53500D75F6B /* release_notes_ios.txt in Resources */,
 				274FDB841DC8960800FAE758 /* Assets.xcassets in Resources */,
@@ -534,6 +552,7 @@
 				271DC5ED1DC9938500D75F6B /* SweetAlert.swift in Sources */,
 				274FDB7D1DC8960800FAE758 /* AppDelegate.swift in Sources */,
 				271DC6411DC9CD0600D75F6B /* Common.swift in Sources */,
+				2776EB271DD1CDF00065A85C /* MineCollectionViewCell.swift in Sources */,
 				27989BF31DCC30CB00F36262 /* AddWorkViewController.swift in Sources */,
 				271DC63A1DC9C2FD00D75F6B /* LoginViewController.swift in Sources */,
 				273BF5871DCB310D0070B3E5 /* WorkCell.swift in Sources */,
@@ -541,6 +560,7 @@
 				273BF5811DCB1B840070B3E5 /* WorkViewController.swift in Sources */,
 				271DC5EA1DC9938500D75F6B /* BaseTabBarViewController.swift in Sources */,
 				271DC5EF1DC9941E00D75F6B /* NetWork.swift in Sources */,
+				2776EB241DD1CCDC0065A85C /* MineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +620,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -614,6 +635,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -649,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -663,6 +686,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

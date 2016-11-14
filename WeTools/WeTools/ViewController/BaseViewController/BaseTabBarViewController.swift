@@ -35,7 +35,7 @@ class BaseTabBarViewController: UITabBarController {
     private func setUI() {
         addChildVC(childController: TaskViewController(), title: "消息", imageName: "chat_tab")
         addChildVC(childController: WorkViewController(), title: "事务", imageName: "discovery_tab")
-        addChildVC(childController: BaseViewController(), title: "我的", imageName: "account_tab")
+        addChildVC(childController: MineViewController(), title: "我的", imageName: "account_tab")
         
     }
     
