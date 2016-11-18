@@ -35,7 +35,9 @@ class MineViewController: BaseViewController , UICollectionViewDelegate , UIColl
         // Dispose of any resources that can be recreated.
     }
     func getData () {
-        imgArr = [ ["mine_download" , "mine_favourite" , "mine_gotPrise" , "mine_history" , "mine_pocketcenter","mine_setting" ,"mine_theme"] , ["mine_systemNotification" , "mine_shakeMe" ]]
+        imgArr = [ ["mine_download" , "mine_history" , "mine_favourite" , "home_region_icon_153" , "mine_pocketcenter","home_region_icon_153" ,"mine_theme"] , ["mine_systemNotification" , "mine_shakeMe","mine_systemNotification" , "mine_shakeMe","mine_systemNotification" ]]
+        
+        
     }
     
     func setUI() {
@@ -51,15 +53,6 @@ class MineViewController: BaseViewController , UICollectionViewDelegate , UIColl
         headerView.addSubview(user_icon)
         
         
-        
-        
-        
-        
-        
-        
-        
-       
-        
         let layout = UICollectionViewFlowLayout()
         layout.headerReferenceSize = CGSize.init(width: SCREEN_WIDTH, height: 44)
         layout.footerReferenceSize = CGSize.init(width: SCREEN_WIDTH, height: 21)
@@ -68,7 +61,7 @@ class MineViewController: BaseViewController , UICollectionViewDelegate , UIColl
         layout.itemSize = CGSize.init(width: SCREEN_WIDTH  / 4.0, height: 110)
         
         
-        let collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 164, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 164), collectionViewLayout:layout )
+        let collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 164, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 164 - 49), collectionViewLayout:layout )
         let cellNib = UINib(nibName: "MineCollectionViewCell", bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: "myCell")
         collectionView.register(TitleView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: header)
@@ -100,6 +93,23 @@ class MineViewController: BaseViewController , UICollectionViewDelegate , UIColl
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = backColor.cgColor
         
+        if indexPath.section == 0 {
+            if indexPath.row < 7 {
+                cell.img.image = UIImage(named: imgArr[indexPath.section][indexPath.row])
+            } else {
+                cell.img.isHidden = true
+                cell.titlelab.isHidden = true
+            }
+        } else {
+            if indexPath.row < 5 {
+                cell.img.image = UIImage(named: imgArr[indexPath.section][indexPath.row])
+            }else{
+                cell.img.isHidden = true
+                cell.titlelab.isHidden = true
+            }
+        }
+        
+        
         return cell
     }
     
@@ -115,7 +125,13 @@ class MineViewController: BaseViewController , UICollectionViewDelegate , UIColl
             let lab1 = kindView.viewWithTag(1) as! UILabel
             lab1.font = UIFont.systemFont(ofSize: 15)
             lab1.frame = CGRect.init(x: 20, y: 0, width: SCREEN_WIDTH, height: 44)
-            lab1.text = "lable1"
+            
+            if indexPath.section == 0 {
+                lab1.text = "个人中心"
+            } else {
+                lab1.text = "我的消息"
+            }
+            
             
             
             

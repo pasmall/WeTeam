@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
 
-class LoginViewController: UIViewController {
+
+class LoginViewController: BaseViewController {
     
     
     
@@ -23,6 +25,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = backColor
+        self.navigationItem.title = "登录"
         self.setUI()
         
     }
@@ -30,6 +33,11 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
 
@@ -83,7 +91,7 @@ class LoginViewController: UIViewController {
         newBtn.setTitleColor(blueColor, for: .normal)
         newBtn.contentHorizontalAlignment = .right
         newBtn.titleLabel?.font = UIFont.Helvetica(size: 14)
-        newBtn.addTarget(self, action: #selector(LoginViewController.tapLoginBtn), for: .touchUpInside)
+        newBtn.addTarget(self, action: #selector(LoginViewController.topReist), for: .touchUpInside)
         view.addSubview(newBtn)
         
         
@@ -92,44 +100,67 @@ class LoginViewController: UIViewController {
         
     }
     
+     func topReist(){
+        
+        let registVC = RegistViewController()
+        
+        self.navigationController?.pushViewController(registVC, animated: true)
+        
+    
+    }
+    
+    
     func tapLoginBtn() {
         
-        //登录融云服务器的token。需要您向您的服务器请求，您的服务器调用server api获取token
-        //开发初始阶段，您可以先在融云后台API调试中获取
-        let token = "fvDs0lf7IpOjkVWzvizywmG94AHbiI5IElva12HJH7/+S9MZb47xNVnEb8uR72K9unN8O+SykY4="
         
-        //连接融云服务器
-        RCIM.shared().connect(withToken: token,
-                              success: { (userId) -> Void in
-                                print("登陆成功。当前登录的用户ID：\(userId)")
-                                
-                                
-                                
-                                
-                                //设置当前登陆用户的信息
-                                RCIM.shared().currentUserInfo = RCUserInfo.init(userId: userId, name: "聂自强", portrait: "http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=qq动漫头像%20男生&step_word=&hs=0&pn=35&spn=0&di=108008139580&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=0&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=undefined&cs=2337318174%2C937294706&os=3270262304%2C2412685266&simid=4245532796%2C821268613&adpicid=0&ln=1996&fr=&fmq=1478139885783_R&fm=&ic=undefined&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=http%3A%2F%2Fp2.gexing.com%2FG1%2FM00%2F20%2F6D%2FrBACE1O-SaLhGj3IAAAeJDAhwQI934_200x200_3.jpg%3Frecache%3D20131108&fromurl=ippr_z2C%24qAzdH3FAzdH3Fooo_z%26e3B2jxtg2_z%26e3Bv54AzdH3Fqqp57xtwg2AzdH3Fnn9dcnc_z%26e3Bip4s&gsm=0&rpstart=0&rpnum=0")
-                                
-                                DispatchQueue.main.sync(execute: { () -> Void in
-                                    //打开会话列表
-                                    let appdelegate = UIApplication.shared.delegate as! AppDelegate
-                                    appdelegate.window?.rootViewController = BaseTabBarViewController()
-                                    
-                                    
-                                    //                                    let chatListView = DemoChatListViewController()
-                                    //                                    self.navigationController?.pushViewController(chatListView, animated: true)
-                                })
-            }, error: { (status) -> Void in
-                
-                
-                print("登陆的错误码为:\(status.rawValue)")
-            }, tokenIncorrect: {
-                
-                
-                //token过期或者不正确。
-                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
-                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
-                print("token错误")
-        })
+//        NetWork.shareNetWork().startRequest(urlStr: "http://127.0.0.1/api/userinfo.php", method: .POST, param: ["name":accTF.text,"psd":psdTF.text], callBack: nil)
+        
+        self.showSimpleHUD()
+        Alamofire.request(IP + "userinfo.php", method: .post, parameters: ["name":accTF.text!,"psd":psdTF.text!]).responseJSON { (data) in
+            if let json = data.result.value as? [String:Any]{
+                if json["code"] as! Int == 200 {
+                    if (json["data"] as? [String:Any] ) != nil{
+                        
+                        let userinfo = json["data"] as? [String:Any]
+                        //连接融云服务器
+                        RCIM.shared().connect(withToken: userinfo?["user_token"] as! String,
+                                              success: { (userId) -> Void in
+                                                print("登陆成功。当前登录的用户ID：\(userId)")
+                                                
+                                                //设置当前登陆用户的信息
+                                                RCIM.shared().currentUserInfo = RCUserInfo.init(userId: userId , name: userinfo?["user_name"] as! String, portrait: IP + "img/000.jpg")
+                                                
+                                                DispatchQueue.main.sync(execute: { () -> Void in
+                                                    
+                                                    self.hidSimpleHUD()
+                                                    //打开会话列表
+                                                    let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                                                    appdelegate.window?.rootViewController = BaseTabBarViewController()
+                                                    
+                                                })
+                        }, error: { (status) -> Void in
+                            
+                            
+                            print("登陆的错误码为:\(status.rawValue)")
+                        }, tokenIncorrect: {
+                            //token过期或者不正确。
+                            //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                            //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                            print("token错误")
+                        })
+                        
+                    }
+                }
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+       
         
         
         

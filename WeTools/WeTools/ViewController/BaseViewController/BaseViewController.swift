@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import JGProgressHUD
 
 class BaseViewController: UIViewController {
     
@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
     var alert = SweetAlert()
     var leftBtn :UIButton! = nil
     var rightBtn :UIButton! = nil
-    
+    let hud  = JGProgressHUD(style: .dark)
     
     
     override func viewDidLoad() {
@@ -102,6 +102,19 @@ class BaseViewController: UIViewController {
         }
         
         
+    }
+    
+    /*
+     hud
+     */
+    func showSimpleHUD(){
+        
+        hud?.show(in: self.view, animated:true)
+        
+    }
+    
+    func hidSimpleHUD()  {
+        hud?.dismiss(animated: true)
     }
     
     

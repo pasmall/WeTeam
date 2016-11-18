@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183CFEC05C2D8C186D815A60 /* Pods_WeTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E123AEF9105833DE05C663 /* Pods_WeTools.framework */; };
 		271DC5E91DC9938500D75F6B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC5E01DC9938500D75F6B /* BaseNavigationController.swift */; };
 		271DC5EA1DC9938500D75F6B /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC5E11DC9938500D75F6B /* BaseTabBarViewController.swift */; };
 		271DC5EC1DC9938500D75F6B /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC5E41DC9938500D75F6B /* TaskViewController.swift */; };
@@ -59,6 +60,7 @@
 		2776EB271DD1CDF00065A85C /* MineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776EB251DD1CDF00065A85C /* MineCollectionViewCell.swift */; };
 		2776EB281DD1CDF00065A85C /* MineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2776EB261DD1CDF00065A85C /* MineCollectionViewCell.xib */; };
 		27989BF31DCC30CB00F36262 /* AddWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */; };
+		27CB49131DDD5E4E00534B46 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CB49111DDD5E4E00534B46 /* RegistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,10 @@
 		2776EB251DD1CDF00065A85C /* MineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCollectionViewCell.swift; sourceTree = "<group>"; };
 		2776EB261DD1CDF00065A85C /* MineCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCollectionViewCell.xib; sourceTree = "<group>"; };
 		27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkViewController.swift; sourceTree = "<group>"; };
+		27CB49111DDD5E4E00534B46 /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		74D949C449DFC91FEA0D82D5 /* Pods-WeTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeTools/Pods-WeTools.debug.xcconfig"; sourceTree = "<group>"; };
+		89E123AEF9105833DE05C663 /* Pods_WeTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90F14811DFC088A0803BAB28 /* Pods-WeTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeTools/Pods-WeTools.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,7 @@
 				271DC5FE1DC9B53500D75F6B /* libopencore-amrnb.a in Frameworks */,
 				271DC6021DC9B53500D75F6B /* RongIMLib.framework in Frameworks */,
 				271DC6011DC9B53500D75F6B /* RongIMKit.framework in Frameworks */,
+				183CFEC05C2D8C186D815A60 /* Pods_WeTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +313,7 @@
 				271DC6081DC9B59900D75F6B /* AVFoundation.framework */,
 				271DC6061DC9B58F00D75F6B /* AudioToolbox.framework */,
 				271DC6041DC9B58400D75F6B /* AssetsLibrary.framework */,
+				89E123AEF9105833DE05C663 /* Pods_WeTools.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				271DC6381DC9C2FD00D75F6B /* LoginViewController.swift */,
+				27CB49111DDD5E4E00534B46 /* RegistViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 				274FDB9B1DC8960800FAE758 /* WeToolsUITests */,
 				274FDB7A1DC8960800FAE758 /* Products */,
 				271DC6031DC9B58300D75F6B /* Frameworks */,
+				A8BAA00693475568B68EAF65 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -401,6 +411,15 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		A8BAA00693475568B68EAF65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74D949C449DFC91FEA0D82D5 /* Pods-WeTools.debug.xcconfig */,
+				90F14811DFC088A0803BAB28 /* Pods-WeTools.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,9 +427,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 274FDBA11DC8960800FAE758 /* Build configuration list for PBXNativeTarget "WeTools" */;
 			buildPhases = (
+				8CAC9B5058B04938CEEF7D3A /* [CP] Check Pods Manifest.lock */,
 				274FDB751DC8960800FAE758 /* Sources */,
 				274FDB761DC8960800FAE758 /* Frameworks */,
 				274FDB771DC8960800FAE758 /* Resources */,
+				B6B350A5795276802571D9CB /* [CP] Embed Pods Frameworks */,
+				F7DF2E2A8BC18A293C98168E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -540,6 +562,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8CAC9B5058B04938CEEF7D3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6B350A5795276802571D9CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeTools/Pods-WeTools-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7DF2E2A8BC18A293C98168E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeTools/Pods-WeTools-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		274FDB751DC8960800FAE758 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -557,6 +627,7 @@
 				271DC63A1DC9C2FD00D75F6B /* LoginViewController.swift in Sources */,
 				273BF5871DCB310D0070B3E5 /* WorkCell.swift in Sources */,
 				271DC63D1DC9C5BB00D75F6B /* BaseViewController.swift in Sources */,
+				27CB49131DDD5E4E00534B46 /* RegistViewController.swift in Sources */,
 				273BF5811DCB1B840070B3E5 /* WorkViewController.swift in Sources */,
 				271DC5EA1DC9938500D75F6B /* BaseTabBarViewController.swift in Sources */,
 				271DC5EF1DC9941E00D75F6B /* NetWork.swift in Sources */,
@@ -713,6 +784,7 @@
 		};
 		274FDBA21DC8960800FAE758 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74D949C449DFC91FEA0D82D5 /* Pods-WeTools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -737,6 +809,7 @@
 		};
 		274FDBA31DC8960800FAE758 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90F14811DFC088A0803BAB28 /* Pods-WeTools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

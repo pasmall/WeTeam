@@ -47,7 +47,7 @@ class TaskViewController: RCConversationListViewController {
     
     func privateChat() {
         //打开会话界面
-        let chatWithSelf = RCConversationViewController(conversationType: RCConversationType.ConversationType_PRIVATE, targetId: "me")
+        let chatWithSelf = RCConversationViewController(conversationType: RCConversationType.ConversationType_PRIVATE, targetId: "5")
         chatWithSelf?.title = "想显示的会话标题"
         self.navigationController?.pushViewController(chatWithSelf!, animated: true)
     }
