@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (4.0.1)
+  - IQKeyboardManagerSwift (4.0.7)
   - JGProgressHUD (1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - IQKeyboardManagerSwift
   - JGProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   JGProgressHUD: 1617b0940cf80bb53e8f7d6f0fd69252ea45d6d4
 
-PODFILE CHECKSUM: 4bfe7b5cd791260ace51964abecc929ba8dcb337
+PODFILE CHECKSUM: 71bf614b3c2795aedb03c50655bb9646ca69f5ff
 
 COCOAPODS: 1.2.0.beta.1

@@ -96,8 +96,6 @@ class LoginViewController: BaseViewController {
         
         
         
-        
-        
     }
     
      func topReist(){
@@ -116,16 +114,23 @@ class LoginViewController: BaseViewController {
 //        NetWork.shareNetWork().startRequest(urlStr: "http://127.0.0.1/api/userinfo.php", method: .POST, param: ["name":accTF.text,"psd":psdTF.text], callBack: nil)
         
         self.showSimpleHUD()
-        Alamofire.request(IP + "userinfo.php", method: .post, parameters: ["name":accTF.text!,"psd":psdTF.text!]).responseJSON { (data) in
+        NetHelper.custom.request(IP + "userinfo.php", method: .post, parameters: ["name":accTF.text!,"psd":psdTF.text!]).responseJSON { (data) in
             if let json = data.result.value as? [String:Any]{
                 if json["code"] as! Int == 200 {
                     if (json["data"] as? [String:Any] ) != nil{
                         
                         let userinfo = json["data"] as? [String:Any]
+                        
                         //连接融云服务器
                         RCIM.shared().connect(withToken: userinfo?["user_token"] as! String,
                                               success: { (userId) -> Void in
                                                 print("登陆成功。当前登录的用户ID：\(userId)")
+                                                
+                                                
+                                                UserInfo.sharedInstance.user_id = userId!
+                                                UserInfo.sharedInstance.user_name = userinfo?["user_name"] as! String
+                                                UserInfo.sharedInstance.user_psd = self.psdTF.text!
+                                                UserInfo.sharedInstance.user_icon = IP + "img/000.jpg"
                                                 
                                                 //设置当前登陆用户的信息
                                                 RCIM.shared().currentUserInfo = RCUserInfo.init(userId: userId , name: userinfo?["user_name"] as! String, portrait: IP + "img/000.jpg")
@@ -149,7 +154,13 @@ class LoginViewController: BaseViewController {
                             print("token错误")
                         })
                         
+                    }else{
+                        self.hidSimpleHUD()
+                         _ = self.alert.showAlert(json["message"] as! String)
                     }
+                }else{
+                
+                    self.hidSimpleHUD()
                 }
             }
             

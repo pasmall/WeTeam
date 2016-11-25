@@ -19,7 +19,7 @@ let H_FIT = SCREEN_HEIGHT/568
 
 
 //局域网配置ip
-let IP = "http://192.168.0.112/api/"
+let IP = "http://192.168.0.114/api/"
 
 
 //定义全局颜色宏

@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import Alamofire
 
 class WorkViewController: BaseViewController , UITableViewDelegate , UITableViewDataSource{
 
     var tableView:UITableView! = nil
     var refreshControl: UIRefreshControl!
-    var timer : Timer!
-    
-    
+    var dataArr:Array<Any> = []{
+        didSet{
+            endOfWork()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         setUI()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,10 +32,28 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getDataInfo()
+    }
+    
+    func getDataInfo()  {
+        Alamofire.request(IP + "getproject.php" , method: .post, parameters: nil).responseJSON { (data) in
+            if let json = data.result.value as? [String:Any]{
+                if json["code"] as! Int == 200 {
+                    print(json["data"] as Any)
+                    self.dataArr = json["data"] as! Array<Any>
+                    self.tableView.reloadData()
+                }
+            }
+        }
+      
+    }
+    
 
     func setUI(){
         
-        self.navigationItem.title = "事务"
+        self.navigationItem.title = "项目列表"
         
 
         createNavRightMenu(right: UIImage.init(named: "work_add")!)
@@ -64,17 +87,20 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return dataArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        
+        let data = self.dataArr[indexPath.row] as! Dictionary<String,Any>
         
         let cell: WorkCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! WorkCell
         cell.accessoryType = .disclosureIndicator
         
         cell.icon.image = UIImage.init(named: "icon")
-        cell.title.text = "我要说点什么鬼啊"
-        cell.des.text = "safhdskhfdsjkfhdjksahfjdshbfdjksfhdjsfhndsa"
+        cell.title.text = data["pro_name"] as! String?
+        cell.des.text = data["pro_des"] as! String?
         
         cell.icon.layer.cornerRadius = 5
         cell.icon.layer.borderWidth = 1
@@ -101,18 +127,20 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if refreshControl.isRefreshing {
-            doSomething()
+//            doSomething()
+            getDataInfo()
         }
     }
     
     func doSomething() {
-        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(WorkViewController.endOfWork), userInfo: nil, repeats: false)
+       
+        
+        
+//        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(WorkViewController.endOfWork), userInfo: nil, repeats: false)
     }
     
     func endOfWork() {
         refreshControl.endRefreshing()
-        timer.invalidate()
-        timer = nil
     }
     
 }

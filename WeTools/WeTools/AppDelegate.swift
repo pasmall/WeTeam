@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-
+import Alamofire
+import IQKeyboardManagerSwift
 
 
 @UIApplicationMain
@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,RCIMConnectionStatusDeleg
         window?.makeKeyAndVisible()
         
         
+        
+        IQKeyboardManager.sharedManager().enable = true
         // Override point for customization after application launch.
         return true
     }
@@ -59,9 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,RCIMConnectionStatusDeleg
     //用户信息提供者。您需要在completion中返回userId对应的用户信息，SDK将根据您提供的信息显示头像和用户名
     func getUserInfo(withUserId userId: String!, completion: ((RCUserInfo?) -> Void)!) {
         print("用户信息提供者，getUserInfoWithUserId:\(userId)")
-        
+
         //简单的示例，根据userId获取对应的用户信息并返回
         //建议您在本地做一个缓存，只有缓存没有该用户信息的情况下，才去您的服务器获取，以提高用户体验
+        
+        
         if (userId == "me") {
             //如果您提供的头像地址是http连接，在iOS9以上的系统中，请设置使用http，否则无法正常显示
             //具体可以参考Info.plist中"App Transport Security Settings->Allow Arbitrary Loads"
@@ -69,7 +73,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,RCIMConnectionStatusDeleg
         } else if (userId == "you") {
             completion(RCUserInfo(userId: userId, name: "你的名字", portrait: "http://www.rongcloud.cn/images/newVersion/logo/qichezc.png"))
         } else {
-            completion(RCUserInfo(userId: userId, name: "unknown", portrait: "http://www.rongcloud.cn/images/newVersion/logo/douguo.png"))
+            
+            Alamofire.request(IP + "userwithid.php", method: .post, parameters: ["userid":userId]).responseJSON { (data) in
+            if let json = data.result.value as? [String:Any]{
+                if json["code"] as! Int == 200 {
+                    
+                    let dic = json["data"] as! Array<Dictionary<String,Any>>
+                    print(dic)
+                    
+                    completion(RCUserInfo(userId: userId, name: dic[0]["user_name"] as! String , portrait: IP + "img/000.jpg"))
+                    
+                    }
+                }
+            }
         }
     }
     

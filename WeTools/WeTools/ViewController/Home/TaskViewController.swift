@@ -24,9 +24,12 @@ class TaskViewController: RCConversationListViewController {
                                           RCConversationType.ConversationType_SYSTEM.rawValue])
         //设置需要将哪些类型的会话在会话列表中聚合显示
         self.setCollectionConversationType([RCConversationType.ConversationType_DISCUSSION.rawValue,
-                                            RCConversationType.ConversationType_GROUP.rawValue])
+                                           RCConversationType.ConversationType_CHATROOM.rawValue,
+                                           RCConversationType.ConversationType_GROUP.rawValue,
+                                           RCConversationType.ConversationType_APPSERVICE.rawValue,
+                                           RCConversationType.ConversationType_SYSTEM.rawValue])
         
-        self.navigationItem.title = "会话列表"
+        self.navigationItem.title = "最近会话列表"
         
         let btn = UIButton()
         btn.frame = CGRect.init(x: 0, y: 0, width: 44 , height: 44)
@@ -36,7 +39,11 @@ class TaskViewController: RCConversationListViewController {
         btn.addTarget(self, action: #selector(TaskViewController.privateChat), for: .touchUpInside)
         
         
-        conversationListTableView.separatorStyle = .none
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "联系人", style: .plain, target: self, action: #selector(TaskViewController.tapLeftbtn))
+        
+        
+        
+//        conversationListTableView.separatorStyle = .none
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +51,10 @@ class TaskViewController: RCConversationListViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tapLeftbtn() {
+        let VC =  FriendViewController()
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
     
     func privateChat() {
         //打开会话界面
@@ -57,7 +68,7 @@ class TaskViewController: RCConversationListViewController {
     override func onSelectedTableRow(_ conversationModelType: RCConversationModelType, conversationModel model: RCConversationModel!, at indexPath: IndexPath!) {
         //打开会话界面
         let chat = RCConversationViewController(conversationType: model.conversationType, targetId: model.targetId)
-        chat?.title = "想显示的会话标题"
+        chat?.title = "好友"
         self.navigationController?.pushViewController(chat!, animated: true)
     }
     
