@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="190" id="KGk-i7-Jjw" customClass="TaskCell" customModule="WeTools" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="467" height="190"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="467" height="190"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdK-aN-ywj">
+                        <rect key="frame" x="30" y="0.0" width="2" height="189"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hGE-vu-BUM" userLabel="tinyimg">
+                                <rect key="frame" x="-9" y="15" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="8Fr-dp-MZO"/>
+                                    <constraint firstAttribute="width" constant="20" id="qqr-Gu-wSw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="6jT-Xi-FVD"/>
+                            <constraint firstItem="hGE-vu-BUM" firstAttribute="leading" secondItem="QdK-aN-ywj" secondAttribute="leading" constant="-9" id="BUc-f1-RZh"/>
+                            <constraint firstAttribute="width" constant="2" id="MKO-6r-piw" userLabel="width = 1"/>
+                            <constraint firstItem="hGE-vu-BUM" firstAttribute="top" secondItem="QdK-aN-ywj" secondAttribute="top" constant="15" id="ZrJ-FW-T9k"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ck-5n-OLN" userLabel="Image_con">
+                        <rect key="frame" x="55" y="13" width="374" height="138"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-6-18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXZ-wt-HoJ">
+                        <rect key="frame" x="56" y="160" width="120" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="a3b-bd-3rE"/>
+                            <constraint firstAttribute="height" constant="21" id="wvF-6U-eI2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcj-YN-g4M">
+                        <rect key="frame" x="329" y="160" width="100" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="kpx-Cu-00b"/>
+                        </constraints>
+                        <state key="normal" title="当前状态"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFL-1i-nEZ">
+                        <rect key="frame" x="117" y="26" width="300" height="113"/>
+                        <string key="text">安静看书软件开始发货的手机卡环境是打发第三方的接口是否获得及时发货快冻死了好久上课  安静看书软件开始发货的手机卡环境是打发第三方的接口是否获得及时发货快冻死了好久上课  安静看书软件开始发货的手机卡环境是打发第三方的接口是否获得及时发货快冻死了好久上课  安静看书软件开始发货的手机卡环境是打发第三方的接口是否获得及时发货快冻死了好久上课  </string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="聂自强" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCB-lE-gCH">
+                        <rect key="frame" x="62" y="72" width="60" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.063991700240808691" green="0.11201964398840991" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pXZ-wt-HoJ" firstAttribute="top" secondItem="cCB-lE-gCH" secondAttribute="bottom" constant="67" id="1lJ-0a-blC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dcj-YN-g4M" secondAttribute="trailing" constant="30" id="5EO-Iu-NGO"/>
+                    <constraint firstItem="1Ck-5n-OLN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="5dE-zT-FoW"/>
+                    <constraint firstItem="pXZ-wt-HoJ" firstAttribute="top" secondItem="1Ck-5n-OLN" secondAttribute="bottom" constant="9" id="5eA-mb-ZWI"/>
+                    <constraint firstItem="1Ck-5n-OLN" firstAttribute="leading" secondItem="QdK-aN-ywj" secondAttribute="leading" constant="25" id="7d3-xP-MpR"/>
+                    <constraint firstItem="cCB-lE-gCH" firstAttribute="leading" secondItem="QdK-aN-ywj" secondAttribute="trailing" constant="30" id="F3o-7B-qI9"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1Ck-5n-OLN" secondAttribute="bottom" constant="30" id="HBP-YW-Pgg"/>
+                    <constraint firstItem="yFL-1i-nEZ" firstAttribute="top" secondItem="1Ck-5n-OLN" secondAttribute="top" constant="13" id="HsH-Xk-QMB"/>
+                    <constraint firstItem="yFL-1i-nEZ" firstAttribute="trailing" secondItem="1Ck-5n-OLN" secondAttribute="trailing" constant="-12" id="IfQ-7O-plB"/>
+                    <constraint firstItem="QdK-aN-ywj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="M2l-UZ-FGR"/>
+                    <constraint firstAttribute="bottom" secondItem="QdK-aN-ywj" secondAttribute="bottom" id="Puv-OE-gg6"/>
+                    <constraint firstItem="yFL-1i-nEZ" firstAttribute="leading" secondItem="cCB-lE-gCH" secondAttribute="trailing" constant="-5" id="RxH-e0-MyZ"/>
+                    <constraint firstItem="pXZ-wt-HoJ" firstAttribute="leading" secondItem="QdK-aN-ywj" secondAttribute="trailing" constant="24" id="VhG-U3-PKe"/>
+                    <constraint firstItem="dcj-YN-g4M" firstAttribute="top" secondItem="1Ck-5n-OLN" secondAttribute="bottom" constant="9" id="beN-ev-lhr"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="dcj-YN-g4M" secondAttribute="bottom" id="d93-Mn-Fnl"/>
+                    <constraint firstItem="cCB-lE-gCH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="64" id="kTo-0N-Ki0"/>
+                    <constraint firstItem="yFL-1i-nEZ" firstAttribute="bottom" secondItem="1Ck-5n-OLN" secondAttribute="bottom" constant="-12" id="kkK-mn-vof"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1Ck-5n-OLN" secondAttribute="trailing" constant="30" id="sTU-Sd-dwv"/>
+                    <constraint firstItem="QdK-aN-ywj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="tLJ-nx-YW3"/>
+                    <constraint firstItem="pXZ-wt-HoJ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="xQq-PO-d0k"/>
+                    <constraint firstItem="yFL-1i-nEZ" firstAttribute="leading" secondItem="1Ck-5n-OLN" secondAttribute="leading" constant="62" id="xfU-FT-vGD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bgimg" destination="1Ck-5n-OLN" id="kBF-li-dSs"/>
+                <outlet property="conLab" destination="yFL-1i-nEZ" id="4ao-e1-9OH"/>
+                <outlet property="line" destination="QdK-aN-ywj" id="bWa-lb-KJ5"/>
+                <outlet property="lineimg" destination="hGE-vu-BUM" id="lXV-NT-Hx8"/>
+                <outlet property="timelab" destination="pXZ-wt-HoJ" id="JBV-Qq-kWc"/>
+                <outlet property="typeBtn" destination="dcj-YN-g4M" id="LRM-q0-ObO"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="-92"/>
+        </tableViewCell>
+    </objects>
+</document>

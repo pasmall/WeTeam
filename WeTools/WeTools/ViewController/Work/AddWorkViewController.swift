@@ -16,8 +16,7 @@ class AddWorkViewController: BaseViewController , UITextViewDelegate ,SFSpeechRe
     let  nameTF  = UITextField()
     let conTF = UITextView()
     let siribtn = UIButton()
-    
-    
+
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh-CN"))!
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -103,13 +102,13 @@ class AddWorkViewController: BaseViewController , UITextViewDelegate ,SFSpeechRe
         siribtn.addTarget(self, action: #selector(startRecording), for: .touchUpInside)
         self.view.addSubview(siribtn)
         
-        
-        
     
+        
     }
     
     
     func tapNext()  {
+        
         
         self.showSimpleHUD()
         Alamofire.request( IP + "creatproject.php", method: .post, parameters: ["proname":nameTF.text!,"prodes":conTF.text! , "procreator":UserInfo.sharedInstance.user_id ]).responseJSON { (data) in
@@ -146,7 +145,12 @@ class AddWorkViewController: BaseViewController , UITextViewDelegate ,SFSpeechRe
     }
     
     
+    func updateProgress() {
+        
+    }
+    
     func startRecording() {
+
         
         self.siribtn.setTitle("正在语音输入", for: .normal)
         

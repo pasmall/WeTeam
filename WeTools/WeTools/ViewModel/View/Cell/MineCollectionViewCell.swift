@@ -10,6 +10,7 @@ import UIKit
 
 class MineCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var selectimg: UIImageView!
 
     @IBOutlet weak var titlelab: UILabel!
     override func awakeFromNib() {

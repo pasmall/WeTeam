@@ -98,7 +98,12 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
         let cell: WorkCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! WorkCell
         cell.accessoryType = .disclosureIndicator
         
-        cell.icon.image = UIImage.init(named: "icon")
+//        cell.icon.image = UIImage.init(named: "icon")
+        
+        NetHelper.custom.request(data["pro_icon"] as! String, method: .get).responseData { (data) in
+            cell.icon.image = UIImage.init(data: data.data!)
+        }
+        
         cell.title.text = data["pro_name"] as! String?
         cell.des.text = data["pro_des"] as! String?
         
@@ -115,7 +120,7 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
         
         
         
-        
+        cell.selectionStyle = .none
         return cell
     
     }
@@ -124,20 +129,24 @@ class WorkViewController: BaseViewController , UITableViewDelegate , UITableView
     
         return 84
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = self.dataArr[indexPath.row] as! Dictionary<String,Any>
+        
+        let taskVc = TaskInfoViewController()
+        taskVc.proname = data["pro_name"] as! String
+        taskVc.pro_id = data["pro_id"] as! String
+        taskVc.pro_creator = data["pro_creator"] as! String
+        self.navigationController?.pushViewController(taskVc, animated: true)
+    }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if refreshControl.isRefreshing {
-//            doSomething()
             getDataInfo()
         }
     }
     
-    func doSomething() {
-       
-        
-        
-//        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(WorkViewController.endOfWork), userInfo: nil, repeats: false)
-    }
     
     func endOfWork() {
         refreshControl.endRefreshing()

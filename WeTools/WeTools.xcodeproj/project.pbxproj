@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		183CFEC05C2D8C186D815A60 /* Pods_WeTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E123AEF9105833DE05C663 /* Pods_WeTools.framework */; };
+		271322BC1DEBD05F003DDF5D /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 271322B51DEBD05F003DDF5D /* UITableView+FDIndexPathHeightCache.m */; };
+		271322BD1DEBD05F003DDF5D /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 271322B71DEBD05F003DDF5D /* UITableView+FDKeyedHeightCache.m */; };
+		271322BE1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 271322B91DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCell.m */; };
+		271322BF1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 271322BB1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		271322C11DEE7278003DDF5D /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271322C01DEE7278003DDF5D /* AddTaskViewController.swift */; };
+		271322C51DEFD296003DDF5D /* KMVoiceRecordHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271322C31DEFD296003DDF5D /* KMVoiceRecordHUD.swift */; };
+		271322C71DEFFDDA003DDF5D /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271322C61DEFFDDA003DDF5D /* HudView.swift */; };
 		271DC5E91DC9938500D75F6B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC5E01DC9938500D75F6B /* BaseNavigationController.swift */; };
 		271DC5EA1DC9938500D75F6B /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC5E11DC9938500D75F6B /* BaseTabBarViewController.swift */; };
 		271DC5EC1DC9938500D75F6B /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DC5E41DC9938500D75F6B /* TaskViewController.swift */; };
@@ -61,6 +68,10 @@
 		2776EB271DD1CDF00065A85C /* MineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776EB251DD1CDF00065A85C /* MineCollectionViewCell.swift */; };
 		2776EB281DD1CDF00065A85C /* MineCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2776EB261DD1CDF00065A85C /* MineCollectionViewCell.xib */; };
 		27989BF31DCC30CB00F36262 /* AddWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */; };
+		27A355141DE7CECD00721BC6 /* TaskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A355131DE7CECD00721BC6 /* TaskInfoViewController.swift */; };
+		27A355171DE7D98100721BC6 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A355151DE7D98100721BC6 /* TaskCell.swift */; };
+		27A355181DE7D98100721BC6 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A355161DE7D98100721BC6 /* TaskCell.xib */; };
+		27A3551B1DE82FA500721BC6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3551A1DE82FA500721BC6 /* TaskModel.swift */; };
 		27A88B051DE2EBC200A35673 /* AffirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A88B041DE2EBC200A35673 /* AffirmViewController.swift */; };
 		27A88B281DE2F1B600A35673 /* FSCalendar+Deprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A88B091DE2F1B600A35673 /* FSCalendar+Deprecated.m */; };
 		27A88B291DE2F1B600A35673 /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A88B0B1DE2F1B600A35673 /* FSCalendar.m */; };
@@ -101,6 +112,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271322B41DEBD05F003DDF5D /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
+		271322B51DEBD05F003DDF5D /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
+		271322B61DEBD05F003DDF5D /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
+		271322B71DEBD05F003DDF5D /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
+		271322B81DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
+		271322B91DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
+		271322BA1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
+		271322BB1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		271322C01DEE7278003DDF5D /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		271322C31DEFD296003DDF5D /* KMVoiceRecordHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMVoiceRecordHUD.swift; sourceTree = "<group>"; };
+		271322C61DEFFDDA003DDF5D /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		271DC5E01DC9938500D75F6B /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		271DC5E11DC9938500D75F6B /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		271DC5E41DC9938500D75F6B /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +184,10 @@
 		2776EB251DD1CDF00065A85C /* MineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCollectionViewCell.swift; sourceTree = "<group>"; };
 		2776EB261DD1CDF00065A85C /* MineCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCollectionViewCell.xib; sourceTree = "<group>"; };
 		27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AddWorkViewController.swift; sourceTree = "<group>"; };
+		27A355131DE7CECD00721BC6 /* TaskInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfoViewController.swift; sourceTree = "<group>"; };
+		27A355151DE7D98100721BC6 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		27A355161DE7D98100721BC6 /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		27A3551A1DE82FA500721BC6 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		27A88B041DE2EBC200A35673 /* AffirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AffirmViewController.swift; sourceTree = "<group>"; };
 		27A88B091DE2F1B600A35673 /* FSCalendar+Deprecated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSCalendar+Deprecated.m"; sourceTree = "<group>"; };
 		27A88B0A1DE2F1B600A35673 /* FSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendar.h; sourceTree = "<group>"; };
@@ -254,6 +280,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271322B31DEBD05F003DDF5D /* Cell自适应 */ = {
+			isa = PBXGroup;
+			children = (
+				271322B41DEBD05F003DDF5D /* UITableView+FDIndexPathHeightCache.h */,
+				271322B51DEBD05F003DDF5D /* UITableView+FDIndexPathHeightCache.m */,
+				271322B61DEBD05F003DDF5D /* UITableView+FDKeyedHeightCache.h */,
+				271322B71DEBD05F003DDF5D /* UITableView+FDKeyedHeightCache.m */,
+				271322B81DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCell.h */,
+				271322B91DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCell.m */,
+				271322BA1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCellDebug.h */,
+				271322BB1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCellDebug.m */,
+			);
+			path = "Cell自适应";
+			sourceTree = "<group>";
+		};
 		271DC5DA1DC9938500D75F6B /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +350,7 @@
 		271DC5E51DC9938500D75F6B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				27A355191DE82D2D00721BC6 /* Model */,
 				271DC5E61DC9938500D75F6B /* View */,
 			);
 			path = ViewModel;
@@ -317,8 +359,10 @@
 		271DC5E61DC9938500D75F6B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				271322C31DEFD296003DDF5D /* KMVoiceRecordHUD.swift */,
 				273BF5841DCB30F90070B3E5 /* Cell */,
 				271DC5E71DC9938500D75F6B /* SweetAlert.swift */,
+				271322C61DEFFDDA003DDF5D /* HudView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +370,7 @@
 		271DC5F11DC9B53500D75F6B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				271322B31DEBD05F003DDF5D /* Cell自适应 */,
 				27A88B081DE2F1B600A35673 /* FSCalendar */,
 				271DC5F21DC9B53500D75F6B /* Rong_Cloud */,
 			);
@@ -392,6 +437,8 @@
 				273BF5801DCB1B840070B3E5 /* WorkViewController.swift */,
 				27989BF21DCC30CB00F36262 /* AddWorkViewController.swift */,
 				27A88B041DE2EBC200A35673 /* AffirmViewController.swift */,
+				27A355131DE7CECD00721BC6 /* TaskInfoViewController.swift */,
+				271322C01DEE7278003DDF5D /* AddTaskViewController.swift */,
 			);
 			path = Work;
 			sourceTree = "<group>";
@@ -403,6 +450,8 @@
 				273BF5861DCB310D0070B3E5 /* WorkCell.xib */,
 				2776EB251DD1CDF00065A85C /* MineCollectionViewCell.swift */,
 				2776EB261DD1CDF00065A85C /* MineCollectionViewCell.xib */,
+				27A355151DE7D98100721BC6 /* TaskCell.swift */,
+				27A355161DE7D98100721BC6 /* TaskCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -469,6 +518,14 @@
 				2776EB231DD1CCDC0065A85C /* MineViewController.swift */,
 			);
 			path = Mine;
+			sourceTree = "<group>";
+		};
+		27A355191DE82D2D00721BC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27A3551A1DE82FA500721BC6 /* TaskModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		27A88B081DE2F1B600A35673 /* FSCalendar */ = {
@@ -639,6 +696,7 @@
 				274FDB871DC8960800FAE758 /* LaunchScreen.storyboard in Resources */,
 				2776EB281DD1CDF00065A85C /* MineCollectionViewCell.xib in Resources */,
 				273BF5881DCB310D0070B3E5 /* WorkCell.xib in Resources */,
+				27A355181DE7D98100721BC6 /* TaskCell.xib in Resources */,
 				271DC5FF1DC9B53500D75F6B /* release_notes_ios.txt in Resources */,
 				274FDB841DC8960800FAE758 /* Assets.xcassets in Resources */,
 				271DC6001DC9B53500D75F6B /* RongCloud.bundle in Resources */,
@@ -716,11 +774,13 @@
 			files = (
 				27A88B301DE2F1B600A35673 /* FSCalendarConstants.m in Sources */,
 				271DC5E91DC9938500D75F6B /* BaseNavigationController.swift in Sources */,
+				27A355171DE7D98100721BC6 /* TaskCell.swift in Sources */,
 				27A88B281DE2F1B600A35673 /* FSCalendar+Deprecated.m in Sources */,
 				271DC63F1DC9CACC00D75F6B /* Extensions.swift in Sources */,
 				27A88B351DE2F1B600A35673 /* FSCalendarStickyHeader.m in Sources */,
 				27A88B311DE2F1B600A35673 /* FSCalendarDelegateProxy.m in Sources */,
 				27A88B2E1DE2F1B600A35673 /* FSCalendarCollectionView.m in Sources */,
+				271322BF1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				271DC5EC1DC9938500D75F6B /* TaskViewController.swift in Sources */,
 				27A88B331DE2F1B600A35673 /* FSCalendarHeaderView.m in Sources */,
 				271DC6431DC9E34D00D75F6B /* MyUI.swift in Sources */,
@@ -728,26 +788,34 @@
 				271DC5ED1DC9938500D75F6B /* SweetAlert.swift in Sources */,
 				27A88B341DE2F1B600A35673 /* FSCalendarScopeHandle.m in Sources */,
 				274FDB7D1DC8960800FAE758 /* AppDelegate.swift in Sources */,
+				271322C51DEFD296003DDF5D /* KMVoiceRecordHUD.swift in Sources */,
+				271322BE1DEBD05F003DDF5D /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				271322C11DEE7278003DDF5D /* AddTaskViewController.swift in Sources */,
 				2730885B1DDEDA840044CC12 /* FriendViewController.swift in Sources */,
 				27A88B2B1DE2F1B600A35673 /* FSCalendarAppearance.m in Sources */,
 				27A88B291DE2F1B600A35673 /* FSCalendar.m in Sources */,
 				27A88B2F1DE2F1B600A35673 /* FSCalendarCollectionViewLayout.m in Sources */,
+				27A355141DE7CECD00721BC6 /* TaskInfoViewController.swift in Sources */,
 				271DC6411DC9CD0600D75F6B /* Common.swift in Sources */,
 				2776EB271DD1CDF00065A85C /* MineCollectionViewCell.swift in Sources */,
 				27989BF31DCC30CB00F36262 /* AddWorkViewController.swift in Sources */,
+				271322BC1DEBD05F003DDF5D /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				27A88B2D1DE2F1B600A35673 /* FSCalendarCell.m in Sources */,
 				27A88B361DE2F1B600A35673 /* FSCalendarWeekdayView.m in Sources */,
+				271322C71DEFFDDA003DDF5D /* HudView.swift in Sources */,
 				27A88B2C1DE2F1B600A35673 /* FSCalendarCalculator.m in Sources */,
 				271DC63A1DC9C2FD00D75F6B /* LoginViewController.swift in Sources */,
 				273BF5871DCB310D0070B3E5 /* WorkCell.swift in Sources */,
 				271DC63D1DC9C5BB00D75F6B /* BaseViewController.swift in Sources */,
 				27A88B051DE2EBC200A35673 /* AffirmViewController.swift in Sources */,
 				27A88B321DE2F1B600A35673 /* FSCalendarExtensions.m in Sources */,
+				271322BD1DEBD05F003DDF5D /* UITableView+FDKeyedHeightCache.m in Sources */,
 				27C2CC8D1DE6C5820090FDC0 /* NetHelper.swift in Sources */,
 				27CB49131DDD5E4E00534B46 /* RegistViewController.swift in Sources */,
 				273BF5811DCB1B840070B3E5 /* WorkViewController.swift in Sources */,
 				271DC5EA1DC9938500D75F6B /* BaseTabBarViewController.swift in Sources */,
 				271DC5EF1DC9941E00D75F6B /* NetWork.swift in Sources */,
+				27A3551B1DE82FA500721BC6 /* TaskModel.swift in Sources */,
 				27C2CC8B1DE546D80090FDC0 /* UserInfo.swift in Sources */,
 				2776EB241DD1CCDC0065A85C /* MineViewController.swift in Sources */,
 			);
